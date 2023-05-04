@@ -1,6 +1,6 @@
 {
   "name": "setup-ipfs",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A GitHub Action to install and initialize IPFS",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibnesayeed/setup-ipfs.git"
+    "url": "git+https://github.com/machawk1/setup-ipfs.git"
   },
   "keywords": [
     "GitHub",
@@ -19,12 +19,12 @@
     "IPFS",
     "Setup"
   ],
-  "author": "Sawood Alam <@ibnesayeed>",
+  "author": "Sawood Alam <@ibnesayeed> & Mat Kelly <@machawk1>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ibnesayeed/setup-ipfs/issues"
+    "url": "https://github.com/machawk1/setup-ipfs/issues"
   },
-  "homepage": "https://github.com/ibnesayeed/setup-ipfs#readme",
+  "homepage": "https://github.com/machawk1/setup-ipfs#readme",
   "dependencies": {
     "@actions/core": "^1.10",
     "@actions/exec": "^1.1",
