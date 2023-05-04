@@ -2838,14 +2838,12 @@ module.exports =
  */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       function setOutput (name, value) {
-        // command_1.issueCommand('set-output', { name }, value)
-        //const cmd = new Command(command, properties, message)
-        //process.stdout.write(cmd.toString() + os.EOL)
-
         const os = __webpack_require__(87)
         const fs = __webpack_require__(747)
 
         // Temporary hack until core actions library catches up with github new recommendations
+        // Original approach was deprecated but kept here for reference
+        // command_1.issueCommand('set-output', { name }, value)
         const output = process.env.GITHUB_OUTPUT
         fs.appendFileSync(output, `${name}=${value}${os.EOL}`)
       }
