@@ -43,13 +43,13 @@ Hash of the Welcome object containing `readme`, `help`, and other files.
 A simple usage in `jobs.<job_id>.steps` with default latest IPFS version:
 
 ```yml
-- uses: ibnesayeed/setup-ipfs@master
+- uses: oduwsdl/setup-ipfs@main
 ```
 
 Setting up a custom IPFS version (e.g., latest patch of IPFS `0.4.x`):
 
 ```yml
-- uses: ibnesayeed/setup-ipfs@master
+- uses: oduwsdl/setup-ipfs@main
   with:
     ipfs_version: ^0.4
 ```
@@ -57,7 +57,7 @@ Setting up a custom IPFS version (e.g., latest patch of IPFS `0.4.x`):
 Automatically booting the IPFS API service after installation and initialization:
 
 ```yml
-- uses: ibnesayeed/setup-ipfs@master
+- uses: oduwsdl/setup-ipfs@main
   with:
     run_daemon: true
 ```
@@ -81,7 +81,7 @@ jobs:
     name: Test on ${{ matrix.os }} with IPFS ${{ matrix.ipfs }}
     steps:
       - name: Set up IPFS ${{ matrix.ipfs }}
-        uses: ibnesayeed/setup-ipfs@master
+        uses: oduwsdl/setup-ipfs@main
         id: ipfs_setup
         with:
           ipfs_version: ${{ matrix.ipfs }}

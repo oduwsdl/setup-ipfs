@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibnesayeed/setup-ipfs.git"
+    "url": "git+https://github.com/oduwsdl/setup-ipfs.git"
   },
   "keywords": [
     "GitHub",
@@ -22,9 +22,9 @@
   "author": "Sawood Alam <@ibnesayeed>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ibnesayeed/setup-ipfs/issues"
+    "url": "https://github.com/oduwsdl/setup-ipfs/issues"
   },
-  "homepage": "https://github.com/ibnesayeed/setup-ipfs#readme",
+  "homepage": "https://github.com/oduwsdl/setup-ipfs#readme",
   "dependencies": {
     "@actions/core": "^1.10",
     "@actions/exec": "^1.1",
