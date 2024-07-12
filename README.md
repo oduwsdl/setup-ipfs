@@ -1,6 +1,6 @@
-# IPFS Setup Action
+# IPFS/Kubo Setup Action
 
-A GitHub Action to install and initialize [go-ipfs](https://github.com/ipfs/go-ipfs) to run an instance of [InterPlanetary File System (IPFS)](https://ipfs.io/) in all supported runner platforms.
+A GitHub Action to install and initialize [kubo](https://github.com/ipfs/kubo) (formally named `go-ipfs`) to run an instance of [InterPlanetary File System (IPFS)](https://ipfs.io/) in all supported runner platforms.
 This action aims to provide an environment to test DApps that rely on IPFS.
 
 
@@ -10,7 +10,7 @@ This action automatically detects runner platform features like the operating sy
 
 ### `ipfs_version`
 
-IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/go-ipfs/versions) as per the [SemVer format](https://semver.org/) (default: `0.6`).
+IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/go-ipfs/versions) as per the [SemVer format](https://semver.org/) (default: `0.29`).
 
 ### `run_daemon`
 
@@ -46,12 +46,12 @@ A simple usage in `jobs.<job_id>.steps` with default latest IPFS version:
 - uses: oduwsdl/setup-ipfs@main
 ```
 
-Setting up a custom IPFS version (e.g., latest patch of IPFS `0.4.x`):
+Setting up a custom IPFS version (e.g., latest patch of IPFS `0.29.x`):
 
 ```yml
 - uses: oduwsdl/setup-ipfs@main
   with:
-    ipfs_version: ^0.4
+    ipfs_version: ^0.29
 ```
 
 Automatically booting the IPFS API service after installation and initialization:
@@ -74,9 +74,9 @@ jobs:
           - macos-latest
           - windows-latest
         ipfs:
-          - 0.4
-          - 0.5
-          - 0.6
+          - 0.27
+          - 0.28
+          - 0.29
     runs-on: ${{ matrix.os }}
     name: Test on ${{ matrix.os }} with IPFS ${{ matrix.ipfs }}
     steps:

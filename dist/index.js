@@ -2211,10 +2211,10 @@ TunnelingAgent.prototype.createSocket = function createSocket(options, cb) {
 
   debug('making CONNECT request');
   var connectReq = self.request(connectOptions);
-  connectReq.useChunkedEncodingByDefault = false; // for v0.6
-  connectReq.once('response', onResponse); // for v0.6
-  connectReq.once('upgrade', onUpgrade);   // for v0.6
-  connectReq.once('connect', onConnect);   // for v0.7 or later
+  connectReq.useChunkedEncodingByDefault = false;
+  connectReq.once('response', onResponse);
+  connectReq.once('upgrade', onUpgrade);
+  connectReq.once('connect', onConnect);
   connectReq.once('error', onError);
   connectReq.end();
 
