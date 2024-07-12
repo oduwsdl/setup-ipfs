@@ -18,7 +18,7 @@ outputs:
   welcome_ref:
     description: Hash of the Welcome object containing readme, help, and other files
 runs:
-  using: node16
+  using: node20
   main: dist/index.js
 branding:
   icon: package
