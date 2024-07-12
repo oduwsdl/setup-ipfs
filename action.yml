@@ -1,10 +1,10 @@
-name: IPFS Setup Action
+name: IPFS/Kubo Setup Action
 description: A GitHub Action to install and initialize IPFS
 author: Sawood Alam <@ibnesayeed>
 inputs:
   ipfs_version:
     description: IPFS version, automatically resolved to the best matching released binary as per the SemVer format
-    default: 0.7
+    default: 0.29
   run_daemon:
     description: Whether to start IPFS service daemon after installation and initialization
     default: false
