@@ -20,6 +20,9 @@
     "Setup"
   ],
   "author": "Sawood Alam <@ibnesayeed>",
+  "contributors": [
+    {"name":"Mat Kelly <@machawk1>"}
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/oduwsdl/setup-ipfs/issues"
