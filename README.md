@@ -10,7 +10,7 @@ This action automatically detects runner platform features like the operating sy
 
 ### `ipfs_version`
 
-IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/go-ipfs/versions) as per the [SemVer format](https://semver.org/) (default: `0.29`).
+IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/kubo/versions) as per the [SemVer format](https://semver.org/) (default: `0.29`).
 
 ### `run_daemon`
 
