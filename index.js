@@ -22,7 +22,7 @@ function ipfsDistUrl (version) {
   const os = ISWIN ? 'windows' : process.platform
   const arch = process.arch === 'x32' ? '386' : process.arch === 'x64' ? 'amd64' : process.arch
   const pkg = ISWIN ? 'zip' : 'tar.gz'
-  return `https://dist.ipfs.io/go-ipfs/${version}/go-ipfs_${version}_${os}-${arch}.${pkg}`
+  return `https://dist.ipfs.io/kubo/${version}/kubo_${version}_${os}-${arch}.${pkg}`
 }
 
 async function run () {
@@ -36,7 +36,7 @@ async function run () {
     const ipfsPkgPath = await tc.downloadTool(ipfsDownloadUrl)
     const ipfsExtractedFolder = ISWIN ? await tc.extractZip(ipfsPkgPath) : await tc.extractTar(ipfsPkgPath)
     const ipfsPath = await tc.cacheDir(ipfsExtractedFolder, 'ipfs', ipfsDistVer)
-    core.addPath(path.join(ipfsPath, 'go-ipfs'))
+    core.addPath(path.join(ipfsPath, 'kubo'))
 
     const opts = {
       ignoreReturnCode: true,
