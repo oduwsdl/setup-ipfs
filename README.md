@@ -1,6 +1,7 @@
 # IPFS/Kubo Setup Action
 
 A GitHub Action to install and initialize [kubo](https://github.com/ipfs/kubo) (formally named `go-ipfs`) to run an instance of [InterPlanetary File System (IPFS)](https://ipfs.io/) in all supported runner platforms.
+
 This action aims to provide an environment to test DApps that rely on IPFS.
 
 
@@ -10,7 +11,7 @@ This action automatically detects runner platform features like the operating sy
 
 ### `ipfs_version`
 
-IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/go-ipfs/versions) as per the [SemVer format](https://semver.org/) (default: `0.29`).
+IPFS version, automatically resolved to the best matching [released binary](https://dist.ipfs.io/kubo/versions) as per the [SemVer format](https://semver.org/) (default: `0.16`).
 
 ### `run_daemon`
 
@@ -42,17 +43,12 @@ Hash of the Welcome object containing `readme`, `help`, and other files.
 
 A simple usage in `jobs.<job_id>.steps` with default latest IPFS version:
 
-```yml
-- uses: oduwsdl/setup-ipfs@main
-```
-
 Setting up a custom IPFS version (e.g., latest patch of IPFS `0.29.x`):
 
 ```yml
 - uses: oduwsdl/setup-ipfs@main
   with:
-    ipfs_version: ^0.29
-```
+    ipfs_version: ^0.37
 
 Automatically booting the IPFS API service after installation and initialization:
 
@@ -62,7 +58,7 @@ Automatically booting the IPFS API service after installation and initialization
     run_daemon: true
 ```
 
-A comprehensive example with matrix setup to test against various virsions of IPFS on various platforms:
+A comprehensive example with matrix setup to test against various versions of IPFS on various platforms:
 
 ```yml
 jobs:
@@ -74,9 +70,10 @@ jobs:
           - macos-latest
           - windows-latest
         ipfs:
-          - 0.27
-          - 0.28
-          - 0.29
+          - 0.34
+          - 0.35
+          - 0.36
+          - 0.37
     runs-on: ${{ matrix.os }}
     name: Test on ${{ matrix.os }} with IPFS ${{ matrix.ipfs }}
     steps:
@@ -94,4 +91,4 @@ jobs:
           curl -sX POST http://localhost:5001/api/v0/version | jq -e '(.Version=="${{ steps.ipfs_setup.outputs.resolved_ipfs_version }}")'
 ```
 
-[See this example in action](https://github.com/ibnesayeed/setup-ipfs/blob/master/.github/workflows/test.yml).
+[See this example in action](https://github.com/machawk1/setup-ipfs/blob/main/.github/workflows/test.yml).

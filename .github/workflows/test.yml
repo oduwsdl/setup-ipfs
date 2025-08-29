@@ -14,13 +14,14 @@ jobs:
           - macos-latest
           - windows-latest
         ipfs:
-          - 0.27
-          - 0.28
-          - 0.29
+          - 0.34
+          - 0.35
+          - 0.36
+          - 0.37
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }} IPFS-${{ matrix.ipfs }}
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Set up and Run IPFS ${{ matrix.ipfs }}
         id: ipfs_setup
         uses: ./
